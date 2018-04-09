@@ -11,7 +11,7 @@ sfind(){
     echo found \'$1\' in ${2-py} files
 }
 
-#file name search
+# file name search
 nfind(){
     find . -name "*$1*.${2-py}" -print
     echo =====================================
@@ -30,5 +30,29 @@ cmpl(){
     ./app.out
 }
 
-#alias
+# ssh
 alias gw="ssh {GATEWAY_HOST}"
+
+# directory
+function up( )
+{
+    LIMIT=$1
+    P=$PWD
+    for ((i=1; i <= LIMIT; i++))
+    do
+        P=$P/..
+    done
+    cd $P
+    export MPWD=$P
+}
+function back( )
+{
+    LIMIT=$1
+    P=$MPWD
+    for ((i=1; i <= LIMIT; i++))
+    do
+        P=${P%/..}
+    done
+    cd $P
+    export MPWD=$P
+}
