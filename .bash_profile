@@ -34,7 +34,7 @@ cmpl(){
 alias gw="ssh {GATEWAY_HOST}"
 
 # directory
-function up( )
+up()
 {
     LIMIT=$1
     P=$PWD
@@ -45,7 +45,7 @@ function up( )
     cd $P
     export MPWD=$P
 }
-function back( )
+back()
 {
     LIMIT=$1
     P=$MPWD
