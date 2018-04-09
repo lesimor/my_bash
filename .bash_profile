@@ -29,3 +29,6 @@ cmpl(){
     g++ -std=c++11 -Wall -ggdb -o "app.out" "$1"
     ./app.out
 }
+
+#alias
+alias gw="ssh {GATEWAY_HOST}"
