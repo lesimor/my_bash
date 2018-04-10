@@ -56,3 +56,17 @@ back()
     cd $P
     export MPWD=$P
 }
+
+# process info
+psp()
+{
+    PORT=$1
+    if [ -z "$PORT" ]
+    then
+        echo you should set port with second param
+    else
+        lsof -n -i :$PORT | grep LISTEN
+        echo =================================
+        echo processes with LISTEN state on port $PORT
+    fi
+}
