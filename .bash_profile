@@ -6,9 +6,15 @@ alias ipy="python3 manage.py shell"
 
 # file search
 sfind(){
-    find . -name "*.${2-py}" | xargs grep -nr "$1"
-    echo =====================================
-    echo found \'$1\' in ${2-py} files
+    if [ -z "$2" ]
+    then
+        find . -name . | xargs grep -nr "$1"
+        echo found \'$1\' in all files
+    else
+        find . -name "*.${2-py}" | xargs grep -nr "$1"
+        echo =====================================
+        echo found \'$1\' in ${2-py} files
+    fi
 }
 
 # file name search
