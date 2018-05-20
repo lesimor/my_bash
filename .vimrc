@@ -15,8 +15,8 @@ set wildmenu
 set encoding=utf-8
 set fileencodings=utf-8,cp949
 
-"syntax on
-"colorscheme gruvbox
+syntax on
+colorscheme gruvbox
 
 filetype off                  " required
 
