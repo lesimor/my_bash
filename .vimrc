@@ -5,6 +5,13 @@ set tabstop=4
 set expandtab
 set shiftwidth=4 " >> 또는 << 키로 들여 쓰기 할때 스페이스의 갯수. 기본값 8
 set number
+set hls
+set history=200
+set backspace=indent,eol,start
+set showcmd
+set wildmenu
+syntax on
+colorscheme gruvbox
 
 filetype off                  " required
 
@@ -18,6 +25,9 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'The-NERD-tree'
 Plugin 'hynek/vim-python-pep8-indent'
+Plugin 'https://github.com/bronson/vim-visual-star-search.git'
+Plugin 'http://github.com/ervandew/supertab.git'
+Plugin 'davidhalter/jedi-vim'
 Plugin 'YouCompleteMe'
 
 call vundle#end()            " required
