@@ -1,6 +1,7 @@
 #!/bin/bash
-VIM_DIR=~/.vim
-if [ ! -d "$VIM_DIR" ]; then
+
+# Check if vim exists...
+if [ ! -x "$(command -v vim)" ]; then
     echo Please install vim first
     exit 1
 fi
