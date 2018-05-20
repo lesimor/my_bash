@@ -10,6 +10,11 @@ set history=200
 set backspace=indent,eol,start
 set showcmd
 set wildmenu
+
+" encoding
+set encoding=utf-8
+set fileencodings=utf-8,cp949
+
 "syntax on
 "colorscheme gruvbox
 
