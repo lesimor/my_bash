@@ -82,3 +82,5 @@ psp()
         echo processes with LISTEN state on port $PORT
     fi
 }
+
+source ~/.bash_profile
