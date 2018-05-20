@@ -10,8 +10,8 @@ set history=200
 set backspace=indent,eol,start
 set showcmd
 set wildmenu
-syntax on
-colorscheme gruvbox
+"syntax on
+"colorscheme gruvbox
 
 filetype off                  " required
 
