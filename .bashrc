@@ -37,3 +37,7 @@ export PS1="$C_BG_RED\$(parse_home)$C_BG_BLUE\h $C_DEFAULT \W$C_LIGHTYELLOW\$(pa
 # \u : 유저명
 # \h : 호스트명
 # \W : 작업 디렉토리
+
+alias gst="git status"
+alias gbrc="git branch"
+alias glg="git log --all --decorate --oneline --graph"
