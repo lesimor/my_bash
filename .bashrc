@@ -41,3 +41,42 @@ export PS1="$C_BG_RED\$(parse_home)$C_BG_BLUE\h $C_DEFAULT \W$C_LIGHTYELLOW\$(pa
 alias gst="git status"
 alias gbrc="git branch"
 alias glg="git log --all --decorate --oneline --graph"
+
+# file search
+sfind(){
+    if [ -z "$2" ]
+    then
+        find . -name . | xargs grep -nr "$1"
+        echo found \'$1\' in all files
+    else
+        find . -name "*.${2-py}" | xargs grep -nr "$1"
+        echo =====================================
+        echo found \'$1\' in ${2-py} files
+    fi
+}
+
+# file name search
+nfind(){
+    find . -name "*$1*.${2-py}" -print
+    echo =====================================
+    echo name with \'$1\' in ${2-py} files
+}
+
+# clean swap file
+csf(){
+    find . -type f -name "*.sw[klmnop]" -delete
+}
+
+# process info
+psp()
+{
+    PORT=$1
+    if [ -z "$PORT" ]
+    then
+        echo you should set port with second param
+    else
+        lsof -n -i :$PORT | grep LISTEN
+        echo =================================
+        echo processes with LISTEN state on port $PORT
+    fi
+}
