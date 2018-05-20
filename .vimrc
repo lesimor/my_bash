@@ -28,7 +28,7 @@ Plugin 'hynek/vim-python-pep8-indent'
 Plugin 'https://github.com/bronson/vim-visual-star-search.git'
 Plugin 'http://github.com/ervandew/supertab.git'
 Plugin 'davidhalter/jedi-vim'
-Plugin 'YouCompleteMe'
+" Plugin 'YouCompleteMe'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
