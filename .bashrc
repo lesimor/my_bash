@@ -32,3 +32,8 @@ parse_git_branch() {
 parse_home() {
     echo $HOME | sed -e 's/.*\/\(.*\)/\1)/'
 }
+
+export PS1="$C_BG_RED\$(parse_home)$C_BG_BLUE\h $C_DEFAULT \W$C_LIGHTYELLOW\$(parse_git_branch)$C_DEFAULT $ "
+# \u : 유저명
+# \h : 호스트명
+# \W : 작업 디렉토리
