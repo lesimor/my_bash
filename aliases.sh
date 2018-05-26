@@ -45,51 +45,24 @@ alias src='source ~/.bash_profile'
 # Git essentials
 alias gst='git status'
 alias glg="git log --all --decorate --oneline --graph"
+alias gco='git checkout'
+alias gcm='git commit'
 alias gb='git branch'
-alias gbv='git branch -v'
-
-# git checkout <branch>
-function gco()
-{
-    echo Trying checkout ${1-master} branch 
-    git checkout ${1-master}
-}
-
-# git add <files> 
-function ga()
-{
-    if [ -z "$1" ]; then
-        echo "######################"
-        echo "No files selected"
-        echo "######################"
-    else
-        git add "$@"
-    fi
-}
-
-# git commit -m <commit message> 
-function gcm()
-{
-    if [ -z "$1" ]; then
-        echo "######################"
-        echo Commit message required
-        echo "######################"
-    else
-        git commit -m "$1"
-    fi
-}
+alias gdf='git diff'
+alias ga='git add'
 
 # git branch sync with remote 
 # checkout and pull
-function gbs()
+function gpl()
 {
     git checkout ${1-master}
-    git pull ${2-origin} master
+    git pull ${2-origin} ${1-master}
 } 
 
 # push
-function gp()
+function gps()
 {
+    echo Trying to push on ${1-origin} $(git rev-parse --abbrev-ref HEAD)
     git push -u ${1-origin} $(git rev-parse --abbrev-ref HEAD)
 } 
 
