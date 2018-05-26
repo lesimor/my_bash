@@ -1,4 +1,5 @@
 # .bash_profile
+NLP_PORT=10100
 
 # Get the aliases and functions
 if [ -f ~/.bashrc ]; then
