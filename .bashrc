@@ -39,6 +39,11 @@ export PS1="$C_BG_RED\$(parse_home)$C_BG_BLUE\h $C_DEFAULT \W$C_LIGHTYELLOW\$(pa
 # \W : 작업 디렉토리
 
 # Alias
+## bash
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+
 ## git
 alias gst="git status"
 alias gbrc="git branch"
@@ -82,5 +87,16 @@ psp()
         echo processes with LISTEN state on port $PORT
     fi
 }
+# Source custom alias
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
 
-source ~/.bash_profile
+
+# Source global definitions
+if [ -f $HOME/my_bash/aliases.sh ]; then
+    echo Custom alias applied
+    . $HOME/my_bash/aliases.sh
+else
+    echo Custom alias path not found : $HOME/my_bash/aliases.sh
+fi
