@@ -38,6 +38,9 @@ psp()
     fi
 }
 
+# clean empty directory and pyc file
+alias pyclean='find . | grep -E "(__pycache__|\.pyc|\.pyo$)" | xargs rm -rf;find . -type d -empty -delete'
+
 ## ETC
 alias src='source ~/.bash_profile'
 
